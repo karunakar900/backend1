@@ -9,7 +9,7 @@ const { json } = require("express");
 
 dotenv.config();
 
-Router.post("/register",
+Router.post("https://todoapp100.onrender.com/register",
     [
         check('email').isEmail(),
         check('password').isLength({ min: 6 }),
@@ -58,7 +58,7 @@ Router.post("/register",
     });
 
 
-Router.post("/login", async (req, res) => {
+Router.post("https://todoapp100.onrender.com/login", async (req, res) => {
     const { email, password } = req.body;
     const userData = await datamodel.findOne({ email: email });
     if (userData != null) {
